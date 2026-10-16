@@ -1,0 +1,28 @@
+import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
+import { Toaster } from "sonner";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Auto Growth Systems — Telecalling CRM & HR Suite",
+  description:
+    "Auto Growth Systems — enterprise telecalling CRM and HR suite with RBAC, a 1M-lead pipeline, approvals, payouts and KYC.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: "#1d4ed8",
+};
+
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html lang="en">
+      <body className="antialiased">
+        {children}
+        <Toaster position="top-center" richColors closeButton />
+      </body>
+    </html>
+  );
+}
